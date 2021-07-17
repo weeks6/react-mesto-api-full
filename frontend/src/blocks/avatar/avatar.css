@@ -1,0 +1,9 @@
+.avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.avatar:hover .avatar__edit {
+  opacity: 0.8;
+}

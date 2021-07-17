@@ -1,0 +1,12 @@
+.form__inner {
+  width: 83.25%;
+  margin-top: 34px;
+  margin-bottom: 37px;
+}
+
+@media screen and (max-width: 880px) {
+  .form__inner {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}

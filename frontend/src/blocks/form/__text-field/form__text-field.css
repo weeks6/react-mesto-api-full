@@ -1,0 +1,33 @@
+.form__text-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 13px;
+  padding-top: 8px;
+  padding-left: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--primary-color-dark);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.form__text-field:focus-visible,
+.form__text-field:focus {
+  outline: none;
+}
+
+.form__input-field_variant_dark .form__text-field {
+  color: var(--primary-color-light);
+  position: relative;
+  border-bottom: 2px solid #ccc;
+}

@@ -1,0 +1,6 @@
+.card {
+  position: relative;
+  background-color: var(--background-color-light);
+  border-radius: 10px;
+  overflow: hidden;
+}

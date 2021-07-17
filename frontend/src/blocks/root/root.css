@@ -1,0 +1,8 @@
+:root {
+  --background-color-dark: #000;
+  --background-color-light: #fff;
+  --primary-color-dark: #000;
+  --primary-color-light: #fff;
+  --secondary-color: #545454;
+  --accent-color: red;
+}

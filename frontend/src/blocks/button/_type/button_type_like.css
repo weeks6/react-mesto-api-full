@@ -1,0 +1,15 @@
+.button_type_like {
+  width: 22px;
+  height: 19px;
+  background-image: url("../../../images/heart-icon.svg");
+}
+
+.button_type_like_active {
+  background-image: url("../../../images/heart-icon-filled.svg");
+}
+
+@media (hover: hover) {
+  .button_type_like:hover {
+    opacity: 0.5;
+  }
+}

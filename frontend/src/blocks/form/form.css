@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  background-color: var(--background-color-light);
+  border-radius: 10px;
+  width: 100%;
+}

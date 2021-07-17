@@ -1,0 +1,16 @@
+.link {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--primary-color-light);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  a.link:hover {
+    opacity: 0.6;
+  }
+}

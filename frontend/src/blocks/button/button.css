@@ -1,0 +1,31 @@
+.button {
+  padding: 0;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.button_variant_light {
+  background-color: var(--background-color-light) !important;
+  color: var(--primary-color-dark) !important;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    opacity: 0.6;
+  }
+
+  .button_theme_dark:hover {
+    opacity: 0.85;
+  }
+}
