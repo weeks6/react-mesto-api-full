@@ -1,10 +1,9 @@
-import { baseUrl, AUTH_ENDPOINT } from './constants'
+import { AUTH_ENDPOINT } from './constants'
 import checkResponse from './checkResponse'
 import { getAccessToken } from './auth'
 
 class Api {
   constructor(options) {
-    this.baseUrl = options.baseUrl
     this.headers = options.headers
 
     this.setAuthHeader()
@@ -69,7 +68,6 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl,
   headers: {
     'Content-Type': 'application/json',
   },
