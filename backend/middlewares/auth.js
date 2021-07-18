@@ -7,6 +7,7 @@ const { JWT_SECRET = DEV_SECRET } = process.env;
 
 // eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
+  console.log(JWT_SECRET);
   try {
     const { authorization } = req.headers;
 
