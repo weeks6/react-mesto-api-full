@@ -15,7 +15,15 @@ module.exports = (req, res, next) => {
     }
     const token = authorization.replace('Bearer ', '');
 
-    const payload = jwt.verify(token, JWT_SECRET);
+    const payload = jwt.verify(token, JWT_SECRET, (err) => {
+      if (err.name === 'JsonWebTokenError') {
+        throw new UnauthorizedError('Необходима авторизация');
+      }
+
+      if (err.name === 'NotBeforeError') {
+        throw new UnauthorizedError('Необходима авторизация');
+      }
+    });
     if (!payload) {
       throw new UnauthorizedError('Необходима авторизация');
     }
