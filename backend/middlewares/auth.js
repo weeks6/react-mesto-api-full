@@ -9,12 +9,12 @@ const { JWT_SECRET = DEV_SECRET } = process.env;
 module.exports = (req, res, next) => {
   try {
     const { authorization } = req.headers;
+    console.log(authorization);
 
     if (!!authorization || !authorization.startsWith('Bearer ')) {
       throw new UnauthorizedError('Необходима авторизация');
     }
     const token = authorization.replace('Bearer ', '');
-    console.log(token);
 
     const payload = jwt.verify(token, JWT_SECRET);
     if (!payload) {
