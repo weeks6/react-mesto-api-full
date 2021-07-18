@@ -68,7 +68,7 @@ app.post(
       password: Joi.string().required().min(8),
     }),
   }),
-  login
+  login,
 );
 app.post(
   '/signup',
@@ -81,7 +81,7 @@ app.post(
       about: Joi.string().min(2).max(30),
     }),
   }),
-  createUser
+  createUser,
 );
 app.use(userRouter);
 app.use(cardRouter);
