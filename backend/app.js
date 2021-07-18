@@ -48,6 +48,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
     res.status(200).send();
+    return;
   }
 
   next();
@@ -96,5 +97,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`server started on port${PORT}`);
+  console.log(`server started on port ${PORT}`);
 });
