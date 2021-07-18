@@ -34,11 +34,11 @@ function App() {
     if (getAccessToken()) {
       api
         .fetchCards()
-        .then((fetchedCards) => setCards(fetchedCards.data))
+        .then((fetchedCards) => setCards(fetchedCards))
         .catch((err) => console.log(err))
 
       getUserInfo()
-        .then((userRes) => setCurrentUser(userRes.data))
+        .then((userRes) => setCurrentUser(userRes))
         .catch((err) => console.log(err))
     }
   }, [])
@@ -92,7 +92,7 @@ function App() {
     api
       .updateUserInfo(name, about)
       .then((user) => {
-        setCurrentUser(user.data)
+        setCurrentUser(user)
         closeAllPopups()
       })
       .catch((err) => console.log(err))
@@ -102,7 +102,7 @@ function App() {
     api
       .updateUserAvatar(avatar)
       .then((user) => {
-        setCurrentUser(user.data)
+        setCurrentUser(user)
         closeAllPopups()
       })
       .catch((err) => console.log(err))
@@ -115,7 +115,7 @@ function App() {
       .changeCardLikeStatus(card._id, isLiked)
       .then((newCard) =>
         setCards((state) =>
-          state.map((c) => (c._id === card._id ? newCard.data : c))
+          state.map((c) => (c._id === card._id ? newCard : c))
         )
       )
       .catch((err) => console.log(err))
@@ -133,7 +133,7 @@ function App() {
     api
       .createCard({ name: title, link })
       .then((card) => {
-        setCards([card.data, ...cards])
+        setCards([card, ...cards])
         closeAllPopups()
       })
       .catch((err) => console.log(err))
@@ -146,11 +146,11 @@ function App() {
           setAccessToken(res.token)
           api.setAuthHeader()
           getUserInfo()
-            .then((userRes) => setCurrentUser(userRes.data))
+            .then((userRes) => setCurrentUser(userRes))
             .catch((err) => console.log(err))
           api
             .fetchCards()
-            .then((fetchedCards) => setCards(fetchedCards.data))
+            .then((fetchedCards) => setCards(fetchedCards))
             .catch((err) => console.log(err))
         }
       })
