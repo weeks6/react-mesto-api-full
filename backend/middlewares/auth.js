@@ -15,15 +15,8 @@ module.exports = (req, res, next) => {
     }
     const token = authorization.replace('Bearer ', '');
 
-    const payload = jwt.verify(token, JWT_SECRET, (err) => {
-      if (err.name === 'JsonWebTokenError') {
-        throw new UnauthorizedError('Необходима авторизация');
-      }
+    const payload = jwt.verify(token, JWT_SECRET);
 
-      if (err.name === 'NotBeforeError') {
-        throw new UnauthorizedError('Необходима авторизация');
-      }
-    });
     if (!payload) {
       throw new UnauthorizedError('Необходима авторизация');
     }
@@ -31,6 +24,14 @@ module.exports = (req, res, next) => {
     req.user = payload;
     next();
   } catch (err) {
+    if (err.name === 'JsonWebTokenError') {
+      throw new UnauthorizedError('Необходима авторизация');
+    }
+
+    if (err.name === 'NotBeforeError') {
+      throw new UnauthorizedError('Необходима авторизация');
+    }
+
     next(err);
   }
 };
